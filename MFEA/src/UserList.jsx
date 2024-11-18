@@ -40,13 +40,27 @@ function UserList() {
       
       {!loading && !error && (
         <>
-          <ul>
-            {currentUsers.map(user => (
-              <li key={user.id}>
-                <strong>{user.name}</strong> ({user.username}) - {user.email}
-              </li>
-            ))}
-          </ul>
+        <table border="1" cellPadding="10" cellSpacing="0">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentUsers.map(user => (
+                <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td>{user.name}</td>
+                  <td>{user.username}</td>
+                  <td>{user.email}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
 
         
           <Pagination
